@@ -15,10 +15,9 @@ function App() {
     }
 
     try {
-      const { data } = await axios.post("", null, {
-        params: { url },
-      })
-      setShortUrl(data.shortUrl)
+      const { data } = await axios.post("http://localhost:3000", { url })
+
+      setShortUrl(data)
     } catch (error) {
       console.error("Error shortening URL:", error)
     }
